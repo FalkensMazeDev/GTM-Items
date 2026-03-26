@@ -1,0 +1,9 @@
+<script>
+document.addEventListener( 'wpcf7submit', function( event ) {
+  window.dataLayer.push({
+    'event': 'cf7submission',
+    'formId': event.detail.contactFormId,
+    'response': event.detail.inputs // Captures all field values
+  });
+});
+</script>
