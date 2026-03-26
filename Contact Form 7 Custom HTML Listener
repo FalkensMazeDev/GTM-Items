@@ -1,3 +1,8 @@
+/* 
+ * This is the Custom HTML Listener that needs to be fired with All Pages in GTM.
+ * The reponse DLV allows for grabbing any of the fields data that is submited by using response.0.value as the DLV.
+ */
+
 <script>
 document.addEventListener( 'wpcf7submit', function( event ) {
   window.dataLayer.push({
