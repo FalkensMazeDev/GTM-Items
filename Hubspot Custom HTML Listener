@@ -1,6 +1,6 @@
 /*
- * 
- *
+ * When you use Hubspot embeded forms and need to track it.
+ * Fire on all pages within GTM.
  */
 
 <script type="text/javascript">
