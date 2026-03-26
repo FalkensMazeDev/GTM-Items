@@ -1,5 +1,5 @@
 /*
- * Used when Ninja Forms plugin on a given website. 
+ * Used when Ninja Forms plugin and fired on all pages within GTM.
  * You can look into passing other info but this is the basic amount of info GTM should use.
  *
  */
