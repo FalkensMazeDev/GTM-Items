@@ -1,0 +1,17 @@
+<script>
+jQuery(function($) {
+  $(document).on('nfFormSubmitResponse', function(e, r) {
+    var formData = r.response.data,
+      formId = formData.form_id,
+      formName = formData.settings.title,
+      submissionId = formData.actions.save.sub_id;
+
+    dataLayer.push({
+      event: 'ninja_form_submission',
+      form_id: formId,
+      form_name: formName,
+      form_submission_id: submissionId
+    });
+  });
+});
+</script>
