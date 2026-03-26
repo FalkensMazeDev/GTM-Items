@@ -1,3 +1,8 @@
+/*
+ * Used when Ninja Forms plugin on a given website. 
+ * You can look into passing other info but this is the basic amount of info GTM should use.
+ *
+ */
 <script>
 jQuery(function($) {
   $(document).on('nfFormSubmitResponse', function(e, r) {
