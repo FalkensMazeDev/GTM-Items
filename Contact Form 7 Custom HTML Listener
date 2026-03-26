@@ -12,3 +12,7 @@ document.addEventListener( 'wpcf7submit', function( event ) {
   });
 });
 </script>
+
+DataLayer Variables:
+formId
+response.0.value - this is used at the form level for specific fields.
