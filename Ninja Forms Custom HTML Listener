@@ -20,3 +20,8 @@ jQuery(function($) {
   });
 });
 </script>
+
+DataLayer Variables:
+form_id
+form_name
+form_submission
