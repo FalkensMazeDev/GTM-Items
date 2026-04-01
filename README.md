@@ -1,6 +1,6 @@
 # GTM Items
 
-A collection of reusable **Google Tag Manager (GTM) Custom HTML listeners** for tracking form submissions across popular WordPress plugins and embedded platforms.
+A collection of reusable **Google Tag Manager (GTM) Items**. Right now it just contains **Custom HTML** items for tracking form submissions across popular WordPress plugins and embedded platforms.
 
 ---
 
