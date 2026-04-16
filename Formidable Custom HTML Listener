@@ -1,0 +1,24 @@
+/*
+ * Used when Formidable plugin and fired on all pages within GTM.
+ * You can look into passing other info but this is the basic amount of info GTM should use.
+ *
+ */
+<script>
+window.dataLayer = window.dataLayer || [];
+
+jQuery(document).on('frmFormComplete', function(event, form, response){
+  var formId = jQuery(form).find('input[name="form_id"]').val() || '';
+  var formName = jQuery(form).attr('id') || '';
+
+  window.dataLayer.push({
+    event: 'formidable_form_submit',
+    form_id: formId,
+    form_name: formName
+  });
+});
+</script>
+
+
+DataLayer Variables:
+form_id
+form_name
