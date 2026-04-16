@@ -4,7 +4,7 @@
  *
  */
 <script>
-/* Formidable Forms — GTM dataLayer listener */
+/* Formidable Forms — GTM dataLayer listener AJAX */
 var frmListener = function() {
 
   // Fires on every Formidable AJAX submission success
@@ -43,6 +43,26 @@ if (typeof jQuery !== 'undefined') {
   frmListener();
 } else {
   window.addEventListener('load', frmListener);
+}
+
+// Non AJAX Listener
+/* Formidable Forms — standard submit (page reload) detection */
+var frmSuccess = document.querySelector('.frm_message');
+
+if (frmSuccess) {
+
+  // Try to grab the form ID from the confirmation wrapper
+  var formIdEl = document.querySelector('[id^="frm_form_"]');
+  var formId   = formIdEl
+    ? formIdEl.id.replace('frm_form_', '')
+    : '';
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event'     : 'frm_form_complete',
+    'frmFormId' : formId
+  });
+
 }
 </script>
 
