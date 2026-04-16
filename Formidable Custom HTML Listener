@@ -46,7 +46,9 @@ if (typeof jQuery !== 'undefined') {
 }
 </script>
 
+Event Trigger:
+frm_form_complete
 
 DataLayer Variables:
-form_id
-form_name
+frmFormId
+frmFormKey
