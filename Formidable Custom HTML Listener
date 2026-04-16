@@ -4,18 +4,46 @@
  *
  */
 <script>
-window.dataLayer = window.dataLayer || [];
+/* Formidable Forms — GTM dataLayer listener */
+var frmListener = function() {
 
-jQuery(document).on('frmFormComplete', function(event, form, response){
-  var formId = jQuery(form).find('input[name="form_id"]').val() || '';
-  var formName = jQuery(form).attr('id') || '';
+  // Fires on every Formidable AJAX submission success
+  jQuery('document').on('frmFormComplete', function(event, response, args) {
 
-  window.dataLayer.push({
-    event: 'formidable_form_submit',
-    form_id: formId,
-    form_name: formName
+    var formId   = args.form_id   || '';
+    var formKey  = args.form_key  || '';
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event'         : 'frm_form_complete',
+      'frmFormId'     : formId,
+      'frmFormKey'    : formKey
+    });
+
   });
-});
+
+  // Fires on native (non-AJAX) submit — fallback
+  jQuery('body').on('submit', '.frm_form_fields', function() {
+
+    var $form   = jQuery(this).closest('form');
+    var formId  = $form.find('input[name="form_id"]').val() || '';
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event'         : 'frm_form_submit',
+      'frmFormId'     : formId
+    });
+
+  });
+
+};
+
+// Wait for jQuery + Formidable to be ready
+if (typeof jQuery !== 'undefined') {
+  frmListener();
+} else {
+  window.addEventListener('load', frmListener);
+}
 </script>
 
 
